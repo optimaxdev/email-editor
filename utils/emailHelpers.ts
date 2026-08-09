@@ -40,7 +40,7 @@ export const generateHTML = (config: Config): string => {
         case "examlink":
           return `
           <tr><td style="padding: 0 20px 16px 20px;">
-          {% if exam %}
+          {% unless exam %}
           <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 4px; background-color: #ffffff; border-collapse: separate;">
           <tr>
           <td width="4" style="background-color: ${store.calloutBorderColor}; border-radius: 4px 0 0 4px; font-size: 0; line-height: 0;">&nbsp;</td>
@@ -54,7 +54,7 @@ export const generateHTML = (config: Config): string => {
                   </td>
                   </tr>
                   </table>
-                  {% endif %}
+                  {% endunless %}
           </td></tr>`;
         default:
           return "";
